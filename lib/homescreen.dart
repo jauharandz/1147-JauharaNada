@@ -1,4 +1,6 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -6,22 +8,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _page = 0;
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   final List Menu = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8'
+    'Jadwal SBMPN',
+    'Jadwal SNMPN'
   ];
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+        key: _bottomNavigationKey,
+        items: <Widget>[
+          Icon(Icons.home, size: 30),
+          Icon(Icons.notifications, size: 30),
+          Icon(Icons.help, size: 30),
+          Icon(Icons.person, size: 30),
+        ],
+        onTap: (index) {
+          setState(() {
+            _page = 3;
+          });
+        },
+      ),
       body: Stack(
         children: <Widget>[
+          Text(_page.toString(), textScaleFactor: 10.0),
+          ElevatedButton(child: RaisedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/notif');
+            },
+          )),
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -152,11 +170,19 @@ class _HomePageState extends State<HomePage> {
                 ],
               )),
           ListView.builder(
-            padding: new EdgeInsets.only(top: 280, left: 30, right: 30),
+            padding: new EdgeInsets.only(top: 300, left: 15, right: 15),
             itemBuilder: (context, index) {
               return Card(
+                color: Color.fromARGB(255, 201, 221, 201),
                 child: ListTile(
                   title: Text(Menu[index]),
+                  subtitle: Text('ini keterangan dari' + Menu[index], style: TextStyle(fontSize: 12, color: Color.fromARGB(255, 86, 106, 141))),
+                  leading: CircleAvatar(
+                      backgroundColor: Color.fromARGB(255, 240, 243, 240),
+                      child: Icon(
+                        Icons.calendar_today,
+                        size: 30,
+                      )),
                 ),
               );
             },

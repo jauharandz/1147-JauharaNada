@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                 color: Color.fromARGB(255, 80, 109, 81),
                 padding: EdgeInsets.all(15),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/daftar');
+                  Navigator.pushNamed(context, '/notif');
                 },
                 child: Text(
                   'Daftar',
