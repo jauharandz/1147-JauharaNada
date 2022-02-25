@@ -9,57 +9,57 @@ class NotifPage extends StatefulWidget {
 
 class _NotifPageState extends State<NotifPage> {
   final List Notif = [
-    '1',
-    '2',
-    '3'
+    'Cek Kartu Peserta',
+    'Lengkapi Identitas'
   ];
+  final List Keterangan = [
+    'Hi!\nSegera cek identitas diri dalam kartu peserta kamu ya',
+    'Hi\nSegera lengkapi identitas diri kau ya'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       children: <Widget>[
         Container(
-          alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/gambar1.png'), fit: BoxFit.fitWidth)),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            alignment: Alignment.topCenter,
+            image: AssetImage('assets/images/gambaruts1.jpg'),
+          )),
+        ),
+        Positioned(
+            top: 30,
+            left: 300,
+            child: Text(
+              "Notifikasi",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
+            )),
+        Positioned(
+          top: 130,
+          child: Container(width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height, decoration: BoxDecoration(color: Color.fromARGB(255, 246, 251, 255), borderRadius: BorderRadius.circular(30))),
         ),
         ListView.builder(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.only(top: 300),
           itemBuilder: (context, index) {
             final number = index + 1;
             return Card(
                 child: ListTile(
-              title: Text('Tugas[index]', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 202, 45))),
-              subtitle: Text('Keterangan[index]', style: TextStyle(fontSize: 12, color: Color.fromARGB(255, 86, 106, 141))),
+              title: Text(Notif[index], style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
+              subtitle: Text(Keterangan[index], style: TextStyle(fontSize: 12, color: Color.fromARGB(255, 86, 106, 141))),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber,
-                child: Text(number.toString()),
-              ),
+                  backgroundColor: Color.fromARGB(255, 171, 209, 174),
+                  child: Icon(
+                    Icons.notification_important_rounded,
+                    size: 30,
+                  )),
             ));
           },
           itemCount: Notif.length,
         ),
-        Positioned(
-            top: 650,
-            child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 70,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 88, 135, 173),
-                ))),
-        Positioned(
-          top: 660,
-          right: 50,
-          child: RaisedButton(
-            color: Colors.white,
-            padding: EdgeInsets.all(14),
-            onPressed: () {
-              Navigator.pushNamed(context, '/exit');
-            },
-            child: Text('Exit'),
-          ),
-        )
       ],
     ));
   }

@@ -151,24 +151,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               )),
-          Positioned(
-            top: 280,
-            child: ListView.builder(
-              padding: new EdgeInsets.all(20),
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text(Menu[index]),
-                  ),
-                );
-              },
-              itemCount: Menu.length,
-            ),
+          ListView.builder(
+            padding: new EdgeInsets.only(top: 280, left: 30, right: 30),
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  title: Text(Menu[index]),
+                ),
+              );
+            },
+            itemCount: Menu.length,
           ),
         ],
       ),
-     
-      ]),
     );
   }
 }
