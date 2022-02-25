@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                         color: Color.fromARGB(221, 133, 201, 159),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Center(child: Icon(Icons.person, size: 30, color: Colors.white)),
+                      child: Center(child: Icon(Icons.card_membership, size: 30, color: Colors.white)),
                     ),
                     SizedBox(width: 30),
                     Container(
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                         color: Color.fromARGB(221, 133, 201, 159),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Center(child: Icon(Icons.person, size: 30, color: Colors.white)),
+                      child: Center(child: Icon(Icons.print, size: 30, color: Colors.white)),
                     ),
                   ],
                 )),
@@ -181,7 +181,13 @@ class _HomePageState extends State<HomePage> {
                     width: 30,
                     height: 30,
                     decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: Center(child: Icon(Icons.home, size: 15, color: Color.fromARGB(221, 15, 15, 15))),
+                    child: RaisedButton(
+                        color: Color.fromARGB(255, 27, 47, 56),
+                        padding: EdgeInsets.all(5),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                        child: Icon(Icons.home, size: 15, color: Color.fromARGB(221, 15, 15, 15))),
                   ),
                   SizedBox(width: 50),
                   Container(
@@ -206,14 +212,26 @@ class _HomePageState extends State<HomePage> {
                     width: 30,
                     height: 30,
                     decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: Center(child: Icon(Icons.help, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
+                    child: RaisedButton(
+                        color: Color.fromARGB(255, 27, 47, 56),
+                        padding: EdgeInsets.all(5),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/help');
+                        },
+                        child: Icon(Icons.help, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
                   ),
                   SizedBox(width: 50),
                   Container(
                     width: 30,
                     height: 30,
                     decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: Center(child: Icon(Icons.person, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
+                    child: RaisedButton(
+                        color: Color.fromARGB(255, 27, 47, 56),
+                        padding: EdgeInsets.all(5),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/edit');
+                        },
+                        child: Icon(Icons.person, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
                   ),
                 ]),
               ))
