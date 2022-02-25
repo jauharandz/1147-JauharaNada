@@ -4,7 +4,7 @@ import 'login.dart';
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/home':
+      case '/':
         return MaterialPageRoute(builder: (_) => LoginPage());
       default:
         return errorRoute();
