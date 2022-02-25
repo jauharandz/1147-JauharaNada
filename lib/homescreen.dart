@@ -165,78 +165,13 @@ class _HomePageState extends State<HomePage> {
               itemCount: Menu.length,
             ),
           ),
-          Positioned(
-              bottom: 0,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 80,
-                decoration: BoxDecoration(color: Color.fromARGB(255, 219, 226, 219)),
-              )),
-          Positioned(
-              bottom: 30,
-              left: 50,
-              child: Container(
-                child: Row(children: <Widget>[
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: RaisedButton(
-                        color: Color.fromARGB(255, 27, 47, 56),
-                        padding: EdgeInsets.all(5),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/home');
-                        },
-                        child: Icon(Icons.home, size: 15, color: Color.fromARGB(221, 15, 15, 15))),
-                  ),
-                  SizedBox(width: 50),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: RaisedButton(
-                      color: Color.fromARGB(255, 27, 47, 56),
-                      padding: EdgeInsets.all(5),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/notif');
-                      },
-                      child: Icon(
-                        Icons.alarm,
-                        size: 15,
-                        color: Color.fromARGB(221, 133, 201, 159),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 50),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: RaisedButton(
-                        color: Color.fromARGB(255, 27, 47, 56),
-                        padding: EdgeInsets.all(5),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/help');
-                        },
-                        child: Icon(Icons.help, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
-                  ),
-                  SizedBox(width: 50),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100)),
-                    child: RaisedButton(
-                        color: Color.fromARGB(255, 27, 47, 56),
-                        padding: EdgeInsets.all(5),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/edit');
-                        },
-                        child: Icon(Icons.person, size: 15, color: Color.fromARGB(221, 133, 201, 159))),
-                  ),
-                ]),
-              ))
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+        )
+      ]),
     );
   }
 }
