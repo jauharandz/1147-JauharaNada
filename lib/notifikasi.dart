@@ -22,9 +22,10 @@ class _NotifPageState extends State<NotifPage> {
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           items: <Widget>[
-            Icon(Icons.add, size: 30),
-            Icon(Icons.list, size: 30),
-            Icon(Icons.compare_arrows, size: 30),
+            Icon(Icons.home, size: 30),
+            Icon(Icons.notifications, size: 30),
+            Icon(Icons.help, size: 30),
+            Icon(Icons.person, size: 30),
           ],
           onTap: (index) {
             setState(() {
