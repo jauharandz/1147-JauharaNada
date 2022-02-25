@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'homescreen.dart';
+import 'notifikasi.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -9,6 +10,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => LoginPage());
       case '/home':
         return MaterialPageRoute(builder: (_) => HomePage());
+      case '/notif':
+        return MaterialPageRoute(builder: (_) => NotifPage());
       default:
         return errorRoute();
     }
